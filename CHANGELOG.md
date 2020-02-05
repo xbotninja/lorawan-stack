@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Exposing device sensitive fields to unrelated stack components in the Console.
+
 ### Security
 
 ## [3.5.1] (2020-01-29)
