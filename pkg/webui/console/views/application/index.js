@@ -39,6 +39,7 @@ import ApplicationIntegrationsMqtt from '../application-integrations-mqtt'
 
 import {
   getApplication,
+  getApplicationDeviceCount,
   stopApplicationEventsStream,
   getApplicationsRightsList,
 } from '../../store/actions/applications'
@@ -79,6 +80,7 @@ import PropTypes from '../../../lib/prop-types'
     loadData: id => {
       dispatch(getApplication(id, 'name,description'))
       dispatch(getApplicationsRightsList(id))
+      dispatch(getApplicationDeviceCount(id))
     },
   }),
 )
@@ -100,8 +102,8 @@ export default class Application extends React.Component {
     application: PropTypes.application.isRequired,
     env: PropTypes.env,
     match: PropTypes.match.isRequired,
-    stopStream: PropTypes.func.isRequired,
     rights: PropTypes.rights.isRequired,
+    stopStream: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
